@@ -10,12 +10,14 @@ public class TextBook extends BookDetails implements ICategorize{
 
 	@Override
 	public void getBookByCategory() {
-		List<BookDetails> list=new ArrayList<BookDetails>();
-		list.add(new BookDetails(1,"Physics",25));
-		list.add(new BookDetails(2,"Chemistry",10));
-		list.add(new BookDetails(10,"Mathmetics",22));
+		List<BookDetails> textBookList=new ArrayList<BookDetails>();
+		textBookList.add(new BookDetails(1,"Physics",25));
+		textBookList.add(new BookDetails(2,"Chemistry",10));
+		textBookList.add(new BookDetails(10,"Mathmetics",22));
 		
-		list.stream().map(x->x).forEach(System.out::println);
+		System.out.println("BookID  "+"BookName  "+"Available");
+		System.out.println("===================================");		
+		textBookList.stream().map(x->x).forEach(System.out::println);
 		
 	}
 	

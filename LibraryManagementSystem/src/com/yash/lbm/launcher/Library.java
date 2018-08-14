@@ -11,17 +11,19 @@ public class Library {
 
 	public static void main(String[] args) {
 		
-	    Scanner sc=new Scanner(System.in);
+	    
+		@SuppressWarnings("resource")
+		Scanner sc=new Scanner(System.in);
 		
 	    System.out.println("Enter Book Category:");
-	    ICategorize category=GetCategoryFactory.getBookType(sc.next());
-	    Optional<ICategorize> o = Optional.ofNullable(category);
-	    if(o.isPresent()){
-	    	category.getBookByCategory();
+	    ICategorize bookCategory=GetCategoryFactory.getBookType(sc.next());
+	    Optional<ICategorize> checkCategoryOptional = Optional.ofNullable(bookCategory);
+	    if(checkCategoryOptional.isPresent())
+	    {
+	    	bookCategory.getBookByCategory();
 	    }
 	    else
-	    	System.out.println("Book not available");  
-		
+	    	System.out.println("Book Category is not available");  		
 		
 
 	}

@@ -10,15 +10,16 @@ public class Novel extends BookDetails implements ICategorize {
 
 	@Override
 	public void getBookByCategory() {
-		List<BookDetails> list=new ArrayList<BookDetails>();
-		list.add(new BookDetails(10,"Wings of Fire",25));
-		list.add(new BookDetails(22,"Who will Cry, when you Die",19));
-		list.add(new BookDetails(11,"Million Dollar Begger",29));
+		List<BookDetails> novelList=new ArrayList<BookDetails>();
+		novelList.add(new BookDetails(10,"Wings of Fire",25));
+		novelList.add(new BookDetails(22,"Who will Cry, when you Die",19));
+		novelList.add(new BookDetails(11,"Million Dollar Begger",29));
 		
-		list.stream().map(x->x).forEach(System.out::println);
+		System.out.println("BookID  "+"BookName  "+"Available");
+		System.out.println("===================================");
+		novelList.stream().map(x->x).forEach(System.out::println);
 		
 	}
 	
 	
-
 }

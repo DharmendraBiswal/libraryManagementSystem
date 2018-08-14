@@ -47,18 +47,11 @@ public class BookDetails{
 	public int hashCode(){
 		return this.id;
 	}
-	public boolean equals(int id){
+	public boolean equals(BookDetails obj){
 		
-		if(id==this.getId()){
-			return true;
+		return this.getId()==obj.getId() && this.getBookName()==obj.getBookName() && this.getCatagory()==obj.getCatagory() && this.getQuantity()==obj.getQuantity();
+		
 		}
-		else{
-			return false;
-		}
-		
-		
-		
-	}
 	
 
 	

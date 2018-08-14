@@ -11,22 +11,22 @@ import com.yash.lbm.interfaces.ICategorize;
 
 public class GetCategoryFactory {
 	
-	public static ICategorize getBookType(String category){
-		List<String> list=new ArrayList<String>();
-		list.add("TextBook");
-		list.add("Novel");
+	public static ICategorize getBookType(String bookCategory){
+		List<String> bookCategorylist=new ArrayList<String>();
+		bookCategorylist.add("TextBook");
+		bookCategorylist.add("Novel");
 		
-		Optional<String> optional=Optional.ofNullable(category);
+		Optional<String> optional=Optional.ofNullable(bookCategory);
 		if(optional.isPresent()){
-		if(category.equals("TextBook")){
-			return new TextBook();
+			if(bookCategory.equalsIgnoreCase("TextBook"))
+			{
+			 return new TextBook();
+			}
+			else if(bookCategory.equalsIgnoreCase("Novel"))
+			{
+			 return new Novel();
+			}
 		}
-		else if(category.equals("Novel")){
-			return new Novel();
-		}
-		else {
-			return null;
-		}}
 		return null;
 		
 	}
